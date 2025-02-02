@@ -10,27 +10,29 @@
         <input
           name="toogle-modal-window"
           type="radio"
-          id="toogle-modal-window"
+          class="toogle-modal-window"
+          id="toogle-modal-window-open"
           />
-          <label for="toogle-modal-window">
+          <label for="toogle-modal-window-open">
             Открыть окно
           </label>
+          <div id="modal-window">
+            <div id="modal-window-content">
+                <h2>Модальное окно</h2>
+                <hr/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni ex, illum alias dolor sint, reprehenderit fugiat enim aut eligendi laborum minus! Iure, iusto! Ipsa quaerat consequuntur reiciendis. Repudiandae, et obcaecati?</p>
+                <input
+              name="toogle-modal-window"
+              type="radio"
+              class="toogle-modal-window"
+              id="toogle-modal-window-close"
+              />
+              <label for="toogle-modal-window-close">
+                Закрыть окно
+              </label>
+            </div>
     </div>
 
-    <div id="modal-window">
-        <div id="modal-window-content">
-            <h2>Модальное окно</h2>
-            <hr/>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni ex, illum alias dolor sint, reprehenderit fugiat enim aut eligendi laborum minus! Iure, iusto! Ipsa quaerat consequuntur reiciendis. Repudiandae, et obcaecati?</p>
-            <input
-          name="toogle-modal-window"
-          type="radio"
-          id="toogle-modal-window"
-          />
-          <label for="toogle-modal-window">
-            Закрыть окно
-          </label>
-        </div>
     </div>
     <style>
         * {
@@ -41,7 +43,7 @@
             display: none;
         }
 
-        #toogle-modal-window + label {
+        #toogle-modal-window-open + label {
             display: block;
 
             width: 150px;
@@ -54,7 +56,7 @@
             color: white;
         }
 
-        #toogle-modal-window + label:hover {
+        #toogle-modal-window-open + label:hover {
             background-color: darkmagenta;
             cursor: pointer;
         }
@@ -79,6 +81,12 @@
 
             background-color: blueviolet;
             color: white;
+        }
+        #toogle-modal-window-open + label > #modal-window {
+            display: none;
+        }
+        #toogle-modal-window-open:checked + label > #modal-window {
+            display: flex;
         }
     </style>
 </body>
